@@ -21,4 +21,28 @@ input {
 button {
   padding: 8px 12px;
   cursor: pointer;
+
+}
+
+.gallery {
+  display: flex;
+  gap: 15px;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+
+  align-items: center;
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+img {
+  width: 450px;
+  border-radius: 50%;
+
 }
