@@ -4,6 +4,7 @@ const destroyBtn = document.querySelector('[data-destroy]');
 const divBoxes = document.querySelector('#boxes');
 let newDiv;
 let size = 30;
+const arr = [];
 
 createBtn.addEventListener('click', createBoxes);
 
@@ -13,12 +14,14 @@ function createBoxes() {
     newDiv.className = 'new-div';
     giveSize(size);
     newDiv.style.backgroundColor = getRandomHexColor();
-    divBoxes.append(newDiv);
+    arr.push(newDiv);
   }
+  divBoxes.append(...arr);
+  input.value = '';
 }
 
 function giveSize(size) {
-  for (let i = 0; i <= divBoxes.children.length; i += 1) {
+  for (let i = 0; i <= arr.length; i += 1) {
     newDiv.style.width = `${size}px`;
     newDiv.style.height = `${size}px`;
     size = size + 10;
@@ -35,4 +38,5 @@ destroyBtn.addEventListener('click', destroyBoxes);
 
 function destroyBoxes() {
   [...divBoxes.children].forEach(el => el.remove());
+  location.reload();
 }
